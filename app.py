@@ -33,3 +33,6 @@ async def save(
     add_task(priority_input, task_input)
 
     return RedirectResponse(url="/home", status_code=301)
+
+#@app.delete("/delete", response_class=HTMLResponse)
+#async def delete()

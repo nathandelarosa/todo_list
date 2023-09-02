@@ -36,8 +36,9 @@ def add_task(priority_input, task_input):
         task_input
     ]
 
-    #sql_cmd = "INSERT INTO taskList (Priority, Task) Values " + "(" + priority_input + "," + task_input + ")"
     db_cursor.execute(sql_cmd, dataList)
     db_conn.commit()
 
     return None
+
+#def del_task(id_input):
