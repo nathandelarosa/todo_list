@@ -30,6 +30,7 @@
                 <tr class="table-primary">
                     <th class="text-start" scope="col" width="25%">Priority</th>
                     <th class="text-start" scope="col">Task</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
            
@@ -38,6 +39,12 @@
                 <tr>
                     <td class="text-start">{{ row[0] }}</td>
                     <td class="text-start">{{ row[1] }}</td>
+                    <td class="text-align">
+                        <form action="delete" method="DELETE">
+                            <input type="submit" class="btn btn-outline-danger float-end btn-sm" value="Delete" name="delete_button"
+                            style="margin-left: 50%; position: relative;">
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
