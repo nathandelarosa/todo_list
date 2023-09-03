@@ -41,4 +41,15 @@ def add_task(priority_input, task_input):
 
     return None
 
-#def del_task(id_input):
+def del_task(id_input):
+    db_conn = connect_db()
+    db_cursor = db_conn.cursor()
+
+    sql_cmd = """
+                DELETE FROM taskLisT WHERE ID = ?
+              """
+    
+    db_cursor.execute(sql_cmd, id_input)
+    db_conn.commit()
+
+    return None

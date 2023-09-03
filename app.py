@@ -34,5 +34,10 @@ async def save(
 
     return RedirectResponse(url="/home", status_code=301)
 
-#@app.delete("/delete", response_class=HTMLResponse)
-#async def delete()
+@app.post("/delete", response_class=HTMLResponse)
+async def delete(request: Request, id_input: str = Form(...)):
+    id_num = id_input
+
+    del_task(id_num)
+
+    return RedirectResponse(url="/home", status_code=301)

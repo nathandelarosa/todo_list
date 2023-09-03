@@ -40,7 +40,7 @@
                     <td class="text-start">{{ row[0] }}</td>
                     <td class="text-start">{{ row[1] }}</td>
                     <td class="text-align">
-                        <form action="delete" method="DELETE">
+                        <form action="delete" method="post">
                             <input type="hidden" value="{{ row[2] }}" name="id_input">
                             <button type="submit" class="btn btn-outline-danger float-end btn-sm" style="margin-left: 50%; position: relative;">
                                 Delete
