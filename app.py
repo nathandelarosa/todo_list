@@ -27,10 +27,11 @@ def home(request: Request):
 async def save(
     request: Request,
     priority_input: str = Form(""),
-    task_input: str = Form("")
+    task_input: str = Form(""),
+    date_input: str = Form("")
 ):
     
-    add_task(priority_input, task_input)
+    add_task(priority_input, task_input, date_input)
 
     return RedirectResponse(url="/home", status_code=301)
 

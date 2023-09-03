@@ -11,7 +11,7 @@
 </head>
 <body>
     <div style="padding-top:2%; padding-bottom: 2%;
-    text-align: center; padding-bottom: 5%;">
+    text-align: center; padding-bottom: 3.5%;">
         <h1>Add New Task</h1>
     </div>
 
@@ -25,12 +25,17 @@
             </select>
         </div>
 
-        <div style="padding-top: 3%; padding-left: 5%; padding-right: 5%;">
+        <div class="d-grid gap-2" style="padding-top: 2.5%; padding-left: 5%; padding-right: 5%;">
+            <label class="form-label" style="font-size: 125%;">Completion Date</label>
+            <input class="form-control" placeholder="##/##/####" name="date_input">
+        </div>
+
+        <div style="padding-top: 2.5%; padding-left: 5%; padding-right: 5%;">
             <label class="form-label" style="font-size: 125%;">Task</label>
             <textarea class="form-control btn-outline-primary" id="task" name="task_input" required></textarea>
         </div>
 
-        <div class="d-grid gap-2" style="padding-top: 3.5%; padding-left: 10%; padding-right: 10%;">
+        <div class="d-grid gap-2" style="padding-top: 2.5%; padding-left: 10%; padding-right: 10%;">
             <input type="submit" class="btn btn-primary" value="Save" name="submit_button">
             <a class="btn btn-danger" href="{{url_for('home')}}">Cancel</a>
         </div>

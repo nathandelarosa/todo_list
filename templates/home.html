@@ -28,7 +28,8 @@
         <table width="100%" height="100%" class="table table-striped">
             <thead>
                 <tr class="table-primary">
-                    <th class="text-start" scope="col" width="25%">Priority</th>
+                    <th class="text-start" scope="col" width="15%">Priority</th>
+                    <th class="text-start" scope="col" width="20%">Complete By</th>
                     <th class="text-start" scope="col">Task</th>
                     <th scope="col"></th>
                 </tr>
@@ -38,6 +39,7 @@
                 {% for row in todo_data %}
                 <tr>
                     <td class="text-start">{{ row[0] }}</td>
+                    <td class="text-start">{{ row[3] }}</td>
                     <td class="text-start">{{ row[1] }}</td>
                     <td class="text-align">
                         <form action="delete" method="post">

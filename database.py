@@ -22,18 +22,19 @@ def select_all():
 
     return task_data
 
-def add_task(priority_input, task_input):
+def add_task(priority_input, task_input, date_input):
     db_conn = connect_db()
     db_cursor = db_conn.cursor()
 
     sql_cmd = """
-                INSERT INTO taskList (Priority, Task)
-                VALUES (?, ?);
+                INSERT INTO taskList (Priority, Task, Complete_By)
+                VALUES (?, ?, ?);
               """
     
     dataList = [
         priority_input,
-        task_input
+        task_input,
+        date_input
     ]
 
     db_cursor.execute(sql_cmd, dataList)
