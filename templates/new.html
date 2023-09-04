@@ -17,7 +17,7 @@
 
     <form action="save" method="post">
         <div style="padding-left: 5%; padding-right: 5%;">
-            <select class="form-select" name="priority_input" required>
+            <select class="form-select" name="priority_input" value="{{priority}}" required>
                 <option selected disabled value="">Select Priority Status</option>
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
@@ -27,12 +27,12 @@
 
         <div class="d-grid gap-2" style="padding-top: 2.5%; padding-left: 5%; padding-right: 5%;">
             <label class="form-label" style="font-size: 125%;">Completion Date</label>
-            <input class="form-control" placeholder="##/##/####" name="date_input">
+            <input class="form-control" placeholder="##/##/####" name="date_input" value="{{date}}">
         </div>
 
         <div style="padding-top: 2.5%; padding-left: 5%; padding-right: 5%;">
             <label class="form-label" style="font-size: 125%;">Task</label>
-            <textarea class="form-control btn-outline-primary" id="task" name="task_input" required></textarea>
+            <textarea class="form-control btn-outline-primary" id="task" name="task_input" value="{{task}}" required></textarea>
         </div>
 
         <div class="d-grid gap-2" style="padding-top: 2.5%; padding-left: 10%; padding-right: 10%;">

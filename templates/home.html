@@ -28,8 +28,8 @@
         <table width="100%" height="100%" class="table table-striped">
             <thead>
                 <tr class="table-primary">
-                    <th class="text-start" scope="col" width="15%">Priority</th>
-                    <th class="text-start" scope="col" width="20%">Complete By</th>
+                    <th class="text-start" scope="col" width="10%">Priority</th>
+                    <th class="text-start" scope="col" width="12%">Complete By</th>
                     <th class="text-start" scope="col">Task</th>
                     <th scope="col"></th>
                 </tr>
@@ -40,14 +40,26 @@
                 <tr>
                     <td class="text-start">{{ row[0] }}</td>
                     <td class="text-start">{{ row[3] }}</td>
-                    <td class="text-start">{{ row[1] }}</td>
+                    <td class="text-start">{{ row[1] }}</td> 
                     <td class="text-align">
-                        <form action="delete" method="post">
-                            <input type="hidden" value="{{ row[2] }}" name="id_input">
-                            <button type="submit" class="btn btn-outline-danger float-end btn-sm" style="margin-left: 50%; position: relative;">
-                                Delete
-                            </button>
-                        </form>
+                        <div style="margin-left: 40%; position: relative;">
+                            <div style="float: left; padding-right: 3%;">
+                                <form action="edit" method="post">
+                                    <input type="hidden" value="{{ row[2] }}" name="id_input">
+                                    <button type="submit" class="btn btn-outline-warning btn-sm" style="position: relative; --bs-btn-font-size: .75rem;">
+                                        Edit
+                                    </button>
+                                </form>
+                            </div>
+                            <div style="float: left;">
+                                <form action="delete" method="post">
+                                    <input type="hidden" value="{{ row[2] }}" name="id_input">
+                                    <button type="submit" class="btn btn-outline-danger btn-sm" style="position: relative; --bs-btn-font-size: .75rem;">
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 {% endfor %}

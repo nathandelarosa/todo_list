@@ -42,3 +42,23 @@ async def delete(request: Request, id_input: str = Form(...)):
     del_task(id_num)
 
     return RedirectResponse(url="/home", status_code=301)
+
+@app.post("/edit", response_class=HTMLResponse)
+async def edit(request: Request, id_input: str = Form(...)):
+    id_num = id_input
+
+    data = edit_task(id_num)
+
+    priority = (data[0])
+    task = (data[1])
+    date = (data[3])
+
+    return templates.TemplateResponse(
+        "new.html",
+        {
+            "request": request,
+            "priority": priority,
+            "task": task,
+            "date": date,
+        }
+    )

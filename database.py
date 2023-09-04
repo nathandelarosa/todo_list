@@ -54,3 +54,17 @@ def del_task(id_input):
     db_conn.commit()
 
     return None
+
+def edit_task(id_input):
+    db_conn = connect_db()
+    db_cursor = db_conn.cursor()
+
+    sql_cmd = """
+                SELECT * FROM taskLisT WHERE ID = ?
+              """
+    
+    db_cursor.execute(sql_cmd, id_input)
+    row_data = db_cursor.fetchone()
+
+    return row_data
+    
