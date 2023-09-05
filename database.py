@@ -1,6 +1,7 @@
 import sqlite3
 from sqlite3 import Error
 
+# creates connection to local database on sqlite3 studio #
 def connect_db():
     db_file = "C:\\Users\\n1delarosa\\SQLite Data\\todo_list.db"
     conn = None
@@ -13,6 +14,7 @@ def connect_db():
 
     return conn
 
+# queries for all the data in the taskList table #
 def select_all():
     db_conn = connect_db()
     db_cursor = db_conn.cursor()
@@ -22,6 +24,7 @@ def select_all():
 
     return task_data
 
+# inserts new taskLists input data into the database #
 def add_task(priority_input, task_input, date_input):
     db_conn = connect_db()
     db_cursor = db_conn.cursor()
@@ -42,6 +45,7 @@ def add_task(priority_input, task_input, date_input):
 
     return None
 
+# deletes certain row based on ID from id_input from the database #
 def del_task(id_input):
     db_conn = connect_db()
     db_cursor = db_conn.cursor()
@@ -55,6 +59,7 @@ def del_task(id_input):
 
     return None
 
+# gets a single table row from database based on ID #
 def edit_task(id_input):
     db_conn = connect_db()
     db_cursor = db_conn.cursor()
