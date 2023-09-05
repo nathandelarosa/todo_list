@@ -16,23 +16,24 @@
     </div>
 
     <form action="save" method="post">
-        <div style="padding-left: 5%; padding-right: 5%;">
-            <select class="form-select" name="priority_input" value="{{priority}}" required>
-                <option selected disabled value="">Select Priority Status</option>
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
-            </select>
+        <div class="input-group" style="padding-left: 5%; padding-right: 5%;">
+            <span class="input-group-text">Priority Status</span>
+            <input class="form-control" list="datalistOptions" id="priority_input" placeholder="Select or Type Status" value="{{priority}}">
+            <datalist id="datalistOptions">
+                <option value="Low">
+                <option value="Medium">
+                <option value="High">
+            </datalist>
         </div>
 
-        <div class="d-grid gap-2" style="padding-top: 2.5%; padding-left: 5%; padding-right: 5%;">
-            <label class="form-label" style="font-size: 125%;">Completion Date</label>
-            <input class="form-control" placeholder="##/##/####" name="date_input" value="{{date}}">
+        <div class="input-group" style="padding-top: 2.5%; padding-left: 5%; padding-right: 5%;">
+            <span class="input-group-text" id="date_input">Date</span>
+            <input type="text" class="form-control" placeholder="##/##/####" name="date_input" value="{{date}}" aria-label="date" aria-describedby="date_input" required>
         </div>
 
-        <div style="padding-top: 2.5%; padding-left: 5%; padding-right: 5%;">
-            <label class="form-label" style="font-size: 125%;">Task</label>
-            <textarea class="form-control btn-outline-primary" id="task" name="task_input" value="{{task}}" required></textarea>
+        <div class="input-group" style="padding-top: 2.5%; padding-left: 5%; padding-right: 5%;">
+            <span class="input-group-text">Task</span>
+            <input type="text" class="form-control" name="task_input" value="{{task}}" aria-label="task" aria-describedby="task_input" required>
         </div>
 
         <div class="d-grid gap-2" style="padding-top: 2.5%; padding-left: 10%; padding-right: 10%;">
