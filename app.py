@@ -55,6 +55,8 @@ async def edit(request: Request, id_input: str = Form(...)):
 
     data = edit_task(id_num)
 
+    del_task(id_num)
+
     priority = (data[0])
     task = (data[1])
     date = (data[3])
